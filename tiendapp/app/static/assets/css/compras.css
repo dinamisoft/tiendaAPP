@@ -1,0 +1,147 @@
+body{
+ font-family: Arial, Helvetica, sans-serif;
+ background-image: url("../imagenes/and_hopelessly_lost.jpg");
+ background-size: auto;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ color: aliceblue;
+ html, body {
+  height: 100%;   
+  padding: 0;
+}
+
+}
+.barraSuperior{
+    background: #2c5f2d;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+}
+.logo{
+    font-weight: bold;
+    font-size: 10px;
+}
+.buscar{
+  width: 600px;
+  margin: 0 20px;
+  padding: 6px;
+  border-radius: 5px;
+  border: none;
+}
+.sintenedor{
+    display: flex;
+    min-height: calc(100vh - 50px);
+}
+.nav-der{
+display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.link-mis-compras{
+    color: inherit;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.link-compras:hover {
+  background: #1e824c;  /* verde al pasar el cursor */
+  color: white;}
+.side-bar{
+    width: 220px;
+    background: #3b703d;
+}
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-bar li {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.side-bar li:hover {
+  background: #2c5f2d;
+}
+
+/* Main content */
+.contenedor-core {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.categorias{
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 20px;
+    background: #2c5f2d;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.categorias button{
+  flex: 1;
+  background: #3b703d;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0; 
+}
+.categorias :hover{
+    background: #2c5f2d;
+}
+.productos { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px;
+}
+.card { 
+    background: white; 
+    border-radius: 10px; 
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15); 
+    padding: 15px; text-align: center; 
+} 
+.card img { 
+    max-width: 100px; height: auto;
+    margin-bottom: 10px; 
+} 
+.card h3 {
+    margin: 5px 0;
+    color: black; 
+}
+.card p{
+    color: black;
+}
+.card span { 
+    font-size: 18px; 
+    color: green; 
+    font-weight: bold; 
+} 
+.card button {
+     margin-top: 10px; 
+     background: #2c5f2d; 
+     color: white; 
+     border: none; 
+     padding: 8px 15px; 
+     border-radius: 5px; 
+     cursor: pointer; 
+    } 
+.card button:hover { 
+    background: #244622; 
+} 
+ 
+.banner { margin-top: auto; 
+    background: #1e824c; 
+    color: white;
+    padding: 15px; 
+    text-align: center; 
+    font-size: 16px; 
+    border-radius: 8px; 
+    width: 600px;
+}
