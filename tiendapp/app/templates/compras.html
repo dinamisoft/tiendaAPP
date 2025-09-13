@@ -1,0 +1,88 @@
+<!-- las carpetas entan organizadas asi:
+    /coso    
+        /cssMK2
+            /compras.cc
+        /imagenesMK2
+            banano
+            fresa
+            manzana
+            fondo
+        /jvascrMK2
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssMK2/compras.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--para la barra de navegacion-->
+    <header class="barraSuperior">
+        <div class="logo"> teindaAPP</div>
+        <input type="text" class="buscar" placeholder="buscar...">
+        <nav class="nav-der">
+            <a href="#" class="link-mis-compras">mis compras.</a>
+            <div class="perfil">Julio Cesar.</div>
+        </nav>
+    </header>
+    <div class="sintenedor">
+    
+    <!-- para el menú lateral -->
+    <aside class="side-bar">
+    <ul>
+        <li>Compras.</li>
+        <li>Historial de compras.</li>
+        <li>Calificacíon.</li>
+        <li>Configuracion.</li>
+        <li>ayeda.</li>
+        <li>Cerar sesíon.</li>
+    </ul>
+    </aside>
+
+    <!-- seleccíon principal -->
+    <main class="contenedor-core">
+    <!--para el menú de -->
+    <nav class="categorias">
+        <button>Verduras.</button>
+        <button>Frutas.</button>
+        <button>Lácteos.</button>
+        <button>Abarrotes.</button>
+        <button>Bebidas.</button>
+      </nav>
+
+    <!-- Productos -->
+      <section class="productos">
+        <div class="card">
+          <img id="producto" src="imagenes/fresa.jpg" alt="Fresa">
+          <h3>Fresa</h3>
+          <p>Gramo a $24,98.</p>
+          <span>$12.490</span>
+          <button>Agregar.</button>
+        </div>
+        <div class="card">
+          <img id="producto" src="imagenes/banano.jpg" alt="Banano">
+          <h3>Banano Maduro.</h3>
+          <p>Gramo a $3,29.</p>
+          <span>$3.290</span>
+          <button>Agregar.</button>
+        </div>
+        <div class="card">
+          <img id="producto" src="imagenes/manzana.jpg" alt="Manzana">
+          <h3>Manzana.</h3>
+          <p>Gramo a $13,98.</p>
+          <span>$13.980</span>
+          <button>Agregar.</button>
+        </div>
+        <!--puedo poner mas, pero que paja-->
+        </section>
+        <!-- Oferta especial -->
+      <div class="banner">
+        <strong>OFERTA ESPECIAL.</strong> - ¡Hasta 30% de Descuento en todas las Frutas y Verduras Frescas!
+            </div>
+        </main>
+    </div>
+</body>
+</html>
