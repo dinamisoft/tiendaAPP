@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  height: 100vh;
+  background: #f0f7f4;
+}
+
+/* barra lateral */
+.side-bar {
+  width: 220px;
+  background: #2c5f2d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav-link {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: background 0.3s;
+}
+
+.nav-link:hover {
+  background: #3e7d3e;
+}
+
+.nav-link.active {
+  background: #1f4020;
+}
+
+/* barra superior */
+.topbar {
+  position: fixed;
+  left: 220px;
+  top: 0;
+  right: 0;
+  height: 60px;
+  background: #2c5f2d;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/*.avatar {
+  background: white;
+  color: #2c5f2d;
+  border-radius: 50%;
+  padding: 8px;
+}*/
+/* contenido central */
+.content {
+  margin-left: 220px;
+  margin-top: 70px;
+  padding: 20px;
+}
+
+h1 {
+  color: #2c5f2d;
+}
+
+/* opciones */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.value {
+  font-weight: bold;
+}
+
+/* Switch
+Mimi, ¿me quieres matar? hacer esto me costó mas de lo que esperaba >:c
+*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background: #2c5f2d;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
