@@ -1,59 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="02-css/configuracion.css">
-    <title>condiguracion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="02-css/configuracion.css">
+  <title>Configuración</title>
 </head>
-<!--para la barra lateral-->
 <body>
-<div class="side-bar">
-  <div class="logo"> TiendApp</div>
-  <a href="#" class="nav-link">Admin Dashboard</a>
-  <a href="#" class="nav-link">Compras</a>
-  <a href="#" class="nav-link">Ventas</a>
-  <a href="#" class="nav-link">Créditos</a>
-  <a href="#" class="nav-link">Inventario</a>
-  <a href="#" class="nav-link">Calificación</a>
-  <a href="#" class="nav-link">Reportes</a>
-  <a href="#" class="nav-link active">Configuración</a>
-  <a href="#" class="nav-link">Ayuda</a>
-  <a href="#" class="nav-link">Cerrar sesión</a>
-</div>
-<!--para la barra superior-->
-<div class="topbar">
-  <div class="profile">
-    <span>Administrador</span>
-    <span class="perfil">Perfil</span>
-    <!--<div class="avatar"></div>-->
-  </div>
-</div>
-<!--para contenido central-->
-<div class="content">
+  <!-- Barra superior -->
+  <header class="barraSuperior">
+    <div class="logo">teindaAPP</div>
+    <input type="text" class="buscar" placeholder="buscar...">
+    <nav class="nav-der">
+      <a href="#" class="link-mis-compras">mis compras.</a>
+      <div class="perfil">Julio Cesar.</div>
+    </nav>
+  </header>
+
+  <div class="sintenedor">
+    <!-- Menú lateral -->
+    <aside class="side-bar">
+      <ul>
+        <li><a href="#" class="side-bar-link">Compras.</a></li>
+        <li><a href="#" class="side-bar-link">Historial de compras.</a></li>
+        <li><a href="#" class="side-bar-link">Calificación.</a></li>
+        <li><a href="#" class="side-bar-link">Configuración.</a></li>
+        <li><a href="#" class="side-bar-link">Ayuda.</a></li>
+        <li><a href="#" class="side-bar-link">Cerrar sesión.</a></li>
+      </ul>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenedor-core">
+      <div class="content">
   <h1>Configuración</h1>
+
   <div class="card">
-    <span> Idioma</span>
-    <span class="value">Español ►</span> <!-- alt+16, otra cosa que me costó más de lo esperado-->
+    <span class="icon">🌐</span>
+    <span>Idioma</span>
+    <span class="value">Español ►</span>
   </div>
+
   <div class="card">
-    <span> Moneda</span>
+    <span class="icon">💲</span>
+    <span>Moneda</span>
     <span class="value">Peso (Col) ►</span>
   </div>
+
   <div class="card">
-    <span> Modo oscuro</span>
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="card">
-    <span> Notificaciones</span>
+    <span class="icon">🔔</span>
+    <span>Notificaciones</span>
     <label class="switch">
       <input type="checkbox" checked>
       <span class="slider"></span>
     </label>
   </div>
+</div>
+</main>
 </div>
 </body>
 </html>
