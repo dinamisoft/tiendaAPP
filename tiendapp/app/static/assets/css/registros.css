@@ -1,0 +1,91 @@
+/* Fondo general */
+body {
+  font-family: Arial, sans-serif;
+  background: url('../imagenes/Captura\ de\ pantalla\ 2025-09-11\ 203943.png') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+}
+
+/* Contenedor central (login y registro) */
+.container {
+  background-color: #fdf3e2;   /* Beige */
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+  width: 370px;
+  text-align: center;
+}
+
+/* Títulos */
+.container h1 {
+  color: #006633; /* Verde */
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+/* Campos de formulario */
+.field {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.field .left {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Botones */
+button, input[type="submit"] {
+  background-color: #006633;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px 8px;
+  font-weight: bold;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #004d26;
+}
+
+/* Contenedor de botones */
+.buttons {
+  text-align: center;
+}
+
+/* Enlaces */
+a {
+  display: block;
+  margin-top: 15px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Pie de página */
+footer {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #000;
+}
