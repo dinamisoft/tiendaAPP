@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/CSSREGISTRO.CSS">
+  <title>Registro - TiendApp</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Registro</h1>
+    <form>
+      <div class="field">
+        <div class="left">Nombre y Apellidos</div>
+        <input id="nombre" type="text" required>
+      </div>
+
+      <div class="field">
+        <div class="left">Tipo de documento</div>
+        <select id="tipoDoc" required>
+          <option value="">Seleccione</option>
+          <option value="cc">Cédula de Ciudadanía</option>
+          <option value="ti">Tarjeta de Identidad</option>
+          <option value="ce">Cédula de Extranjería</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <div class="left">ID</div>
+        <input id="ID" type="text" required>
+      </div>
+
+      <div class="field">
+        <div class="left">Correo</div>
+        <input id="correo" type="email" required>
+      </div>
+
+      <div class="field">
+        <div class="left">Contraseña</div>
+        <input id="contraseña" type="password" required>
+      </div>
+
+      <div class="field">
+        <div class="left">Confirmar contraseña</div>
+        <input id="confirmarContraseña" type="password" required>
+      </div>
+
+      <div class="field">
+        <div class="left">Teléfono</div>
+        <input id="telefono" type="tel" required>
+      </div>
+
+      <div class="field">
+        <div class="left">Sexo</div>
+        <select id="sexo" required>
+          <option value="">Seleccione</option>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+          <option value="O">Otro</option>
+        </select>
+      </div>
+
+      <div class="botones">
+        <button type="submit">Registrarse</button>
+        <button type="button" onclick="window.location.href='LOGIN.HTML'">Volver al Login</button>
+      </div>
+    </form>
+
+    <div class="footer">
+      Versión 0.0.0 | Derechos Reservados 2025
+    </div>
+  </div>
+</body>
+</html>
