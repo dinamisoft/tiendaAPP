@@ -1,7 +1,7 @@
 /* Fondo general */
 body {
   font-family: Arial, sans-serif;
-  background: url('../imagenes/Captura\ de\ pantalla\ 2025-09-11\ 203943.png') no-repeat center center fixed;
+  background: url('../img/fondologin.png') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
