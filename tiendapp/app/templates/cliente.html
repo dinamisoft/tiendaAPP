@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiendApp - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="topbar">
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo TiendApp">
+            <span>TiendApp</span>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Buscar productos...">
+            <a href="#carrito-section" class="cart-link">
+                🛒 Mis Compras
+            </a>
+        </div>
+        <div class="profile">
+            <div class="profile-info">
+                <div class="name">Antonio Marin</div>
+                <div class="role">Perfil</div>
+            </div>
+            <div class="avatar">
+                <img src="imagenes/fotoperfil.jpg" alt="Avatar">
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="menu">
+                <a href="#compras-section" class="active">🛒 Compras</a>
+                <a href="#historial-section">📑 Historial de compras</a>
+                <a href="#calificacion-section">⭐ Calificación</a>
+                <a href="#configuracion-section">⚙️ Configuración</a>
+                <a href="#ayuda-section">❓ Ayuda</a>
+                <a href="#logout-section" class="logout">🚪 Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-sections">
+                <section id="compras-section" class="page-section">
+                    <div class="discount-banner">
+                        ¡Aprovecha! 🍊 Descuentos del 15% en Naranjas y Uvas por tiempo limitado.
+                    </div>
+                    
+                    <nav class="categories-bar">
+                        <a href="#verduras">Verduras</a>
+                        <a href="#frutas" class="active">Frutas</a>
+                        <a href="#lacteos">Lácteos</a>
+                        <a href="#abarrotes">Abarrotes</a>
+                        <a href="#bebidas">Bebidas</a>
+                    </nav>
+                    <h2>Mis Compras</h2>
+                    <div class="product-grid">
+                        <div class="card product-card">
+                            <div class="img-container">
+                                <img src="imagenes/fresas.jpg" alt="Fresas">
+                            </div>
+                            <h3>Fresa</h3>
+                            <p>Gramo a $24,98</p>
+                            <p><strong>$ 12.490</strong></p>
+                            <button>Agregar</button>
+                        </div>
+                        <div class="card product-card">
+                            <div class="img-container">
+                                <img src="imagenes/bananos.jpg" alt="Banano Maduro">
+                            </div>
+                            <h3>Banano Maduro</h3>
+                            <p>Gramo a $3,29</p>
+                            <p><strong>$ 3.290</strong></p>
+                            <button>Agregar</button>
+                        </div>
+                        <div class="card product-card">
+                            <div class="img-container">
+                                <img src="imagenes/manzana.jpg" alt="Manzana Verde">
+                            </div>
+                            <h3>Manzana Verde</h3>
+                            <p>Gramo a $13,98</p>
+                            <p><strong>$ 13.980</strong></p>
+                            <button>Agregar</button>
+                        </div>
+                        <div class="card product-card">
+                            <div class="img-container">
+                                <img src="imagenes/naranjas.jpg" alt="Naranja">
+                            </div>
+                            <h3>Naranja</h3>
+                            <p>Gramo a $3,19</p>
+                            <p><strong>$ 7.990</strong></p>
+                            <button>Agregar</button>
+                        </div>
+                        <div class="card product-card">
+                            <div class="img-container">
+                                <img src="imagenes/uvas.jpg" alt="Uvas">
+                            </div>
+                            <h3>Uvas</h3>
+                            <p>Gramo a $16,98</p>
+                            <p><strong>$ 16.980</strong></p>
+                            <button>Agregar</button>
+                        </div>
+                        <div class="card product-card">
+                            <div class="img-container">
+                                <img src="imagenes/kiwi.jpg" alt="Kiwi">
+                            </div>
+                            <h3>Kiwi</h3>
+                            <p>Gramo a $25,99</p>
+                            <p><strong>$ 25.990</strong></p>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="historial-section" class="page-section">
+                    <h2>Historial de Compras</h2>
+                    <div class="historial-grid">
+                        <div class="card compras">
+                            <h3>Últimas Compras</h3>
+                            <ul>
+                                <li>
+                                    <span class="fecha">15 Ago 2024 - 14:32</span>
+                                    <span class="detalle">Fresas, Bananos, Manzanas, Naranjas</span>
+                                    <span class="precio"><strong>$45.670</strong></span>
+                                    <span class="estado entregado">Entregado</span>
+                                    <button>Repetir</button>
+                                </li>
+                                <li>
+                                    <span class="fecha">12 Ago 2024 - 16:45</span>
+                                    <span class="detalle">Uvas, Kiwi, Lechuga, Tomates</span>
+                                    <span class="precio"><strong>$62.940</strong></span>
+                                    <span class="estado entregado">Entregado</span>
+                                    <button>Repetir</button>
+                                </li>
+                                <li>
+                                    <span class="fecha">08 Ago 2024 - 10:15</span>
+                                    <span class="detalle">Aguacates, Limones, Cilantro</span>
+                                    <span class="precio"><strong>$28.450</strong></span>
+                                    <span class="estado procesando">Procesando</span>
+                                    <button>Repetir</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card preferencias">
+                            <h3>Resumen de Preferencia</h3>
+                            <div class="stats">
+                                <div class="stat-card">
+                                    <strong>47%</strong>
+                                    <span>Productos Básicos</span>
+                                </div>
+                                <div class="stat-card">
+                                    <strong>25%</strong>
+                                    <span>Frutas y vegetales</span>
+                                </div>
+                                <div class="stat-card">
+                                    <strong>17%</strong>
+                                    <span>Condimentos y aceite</span>
+                                </div>
+                                <div class="stat-card">
+                                    <strong>14%</strong>
+                                    <span>Proteínas y Lácteos</span>
+                                </div>
+                            </div>
+                            <ol class="detalles">
+                                <li><strong>Productos Básicos Dominan:</strong> El 47% se concentran en arroz, leche y huevos, productos esenciales de la dieta diaria.</li><br>
+                                <li><strong>Tendencia Saludable:</strong> Las frutas representan 25% de preferencias, mostrando una inclinación hacia la alimentación saludable.</li><br>
+                                <li><strong>Oportunidad de Crecimiento:</strong> Los lácteos procesados (yogurt) tienen menor participación (6%), representando una oportunidad para promociones.</li><br>
+                                <li><strong>Patrón Estacional:</strong> Fresas mantienen demanda estable.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="calificacion-section" class="page-section">
+                    <div class="card calificacion-content">
+                        <h2>¡Valora tu última experiencia!</h2>
+                        <p class="subtitle">Tu opinión nos ayuda a mejorar.</p>
+                        <div class="stars-rating" id="estrellas-calificacion">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <p style="font-weight: bold; margin-top: 20px;">¡Déjanos saber tu opinión!</p>
+                        <textarea placeholder="Escribe tu comentario aquí..."></textarea>
+                        <button>Enviar Calificación</button>
+                    </div>
+                </section>
+                
+                <section id="configuracion-section" class="page-section">
+                    <h2>Configuración</h2>
+                    <div class="card configuracion-card">
+                        <h3>Información de la cuenta</h3>
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" value="Antonio Marin">
+                        <label for="correo">Correo electronico</label>
+                        <input type="email" id="correo" value="antonio@email.com">
+                        <button class="btn-config">Cambiar contraseña</button>
+                    </div>
+                    <div class="card configuracion-card">
+                        <h3>Preferencias</h3>
+                        <div class="toggle-switch">
+                            <span>Recibir notificaciones</span>
+                            <input type="checkbox" checked>
+                        </div>
+                        <div class="toggle-switch">
+                            <span>Modo oscuro</span>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div class="card configuracion-card">
+                        <h3>Métodos de pago</h3>
+                        <button class="btn-config">Añadir nuevo método</button>
+                    </div>
+                </section>
+                
+                <section id="ayuda-section" class="page-section">
+                    <h2>Ayuda y Soporte</h2>
+                    <p style="text-align: center; margin-bottom: 30px;">Selecciona una opción para que podamos ayudarte de la mejor manera.</p>
+                    <div class="card ayuda-card">
+                        <h3>Asistencia Rápida</h3>
+                        <div class="ayuda-opcion">
+                            <span>💬</span>
+                            <div>
+                                <h4>Chat en línea</h4>
+                                <p>Habla con uno de nuestros agentes en tiempo real.</p>
+                            </div>
+                        </div>
+                        <div class="ayuda-opcion">
+                            <span>📞</span>
+                            <div>
+                                <h4>Llamar a soporte</h4>
+                                <p>Te conectamos con nuestro equipo de atención al cliente.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card ayuda-card">
+                        <h3>Recursos y Guías</h3>
+                        <div class="ayuda-opcion">
+                            <span>❓</span>
+                            <div>
+                                <h4>Manual de usuario</h4>
+                                <p>Guía completa para usar todas las funciones de TiendApp.</p>
+                            </div>
+                        </div>
+                        <div class="ayuda-opcion">
+                            <span>🌐</span>
+                            <div>
+                                <h4>Sitio web</h4>
+                                <p>Visita nuestro sitio web oficial para más información.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="carrito-section" class="page-section" style="display: none;">
+                    <div class="card">
+                        <h2>🛒 Carrito de Compras</h2>
+                        <ul id="lista-carrito">
+                            </ul>
+                        <div class="total-carrito">
+                            <h4>Total: $<span id="total-monto">0.00</span></h4>
+                        </div>
+                        <div class="botones-carrito">
+                            <button id="boton-vaciar-carrito" class="btn-config">Vaciar Carrito</button>
+                            <button id="boton-pagar" class="btn-config">Proceder al Pago</button>
+                        </div>
+                    </div>
+                </section>
+                <section id="logout-section" class="page-section">
+                    <div class="card logout-card">
+                        <h2>¿Estás seguro que quieres cerrar sesión?</h2>
+                        <p>Tendrás que volver a ingresar tus credenciales para acceder a tu cuenta.</p>
+                        <div class="logout-buttons">
+                            <button class="confirm-btn">Sí, cerrar sesión</button>
+                            <button class="cancel-btn" onclick="history.back()">Cancelar</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
