@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="../CSS/csslogin.css">
+  <link rel="stylesheet" href="../static/assets/css/login.css">
   <title>TIENDAPP - Login</title>
-  <script src="../js/funciones.js"></script>
+  <script src="../static/assets/js/scriptlogin.js"></script>
+
 </head>
 <body>
 
@@ -35,10 +36,30 @@
           </div>
         
 
-
+          
         <div class="btn-container">
-          <button type="submit">Iniciar Sesión</button>
+          <button type="submit" onclick="loginSinBD(event)">Iniciar Sesión</button>
+          <script>
+          function loginSinBD(e) {
+            e.preventDefault();
+            const usuario = document.getElementById('usuario').value;
+            const contraseña = document.getElementById('contraseña').value;
+            // Puedes cambiar estos valores por los que quieras aceptar
+            if(usuario === 'admin' && contraseña === 'admin123') {
+              alert('Inicio de sesión exitoso');
+              // Redirige a la página principal o dashboard
+              // prueba sin base de datos
+              window.location.href = 'cliente.html';
+            } else {
+              alert('Usuario o contraseña incorrectos');
+            }
+          }
+          </script>
+        <!--   <div class="btn-container">
+          <button type="submit"  >Iniciar Sesión</button>
           <button type="button" onclick="window.location.href='registro.html'">Registrarse</button>
+          </div> -->
+
         </div>
 
         
