@@ -62,4 +62,4 @@ document.addEventListener('DOMContentLoaded', function () {
       // window.location.href = 'login.html';
     });
   }
-});<script src="../js/funciones.js"></script>
+})
