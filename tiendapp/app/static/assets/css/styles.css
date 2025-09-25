@@ -20,7 +20,7 @@ body {
     flex-direction: column;
     height: 100vh;
     color: var(--texto-oscuro);
-    background-image: url("imagenes/fondo_tiendapp.png");
+    background-image: url("../img/fondo_tiendapp.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
