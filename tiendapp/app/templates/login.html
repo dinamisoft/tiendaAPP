@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="../static/assets/css/login.css">
   <title>TIENDAPP - Login</title>
   <script src="../static/assets/js/scriptlogin.js"></script>
+  <script src="../static/assets/js/loginsinbdatos.js"></script>
 
 </head>
 <body>
@@ -37,31 +38,37 @@
         
 
           
-        <div class="btn-container">
-          <button type="submit" onclick="loginSinBD(event)">Iniciar Sesión</button>
-          <button type="button" onclick="window.location.href='registro.html'">Registrarse</button>
-          <script>
-          function loginSinBD(e) {
-            e.preventDefault();
-            const usuario = document.getElementById('usuario').value;
-            const contraseña = document.getElementById('contraseña').value;
-            // Puedes cambiar estos valores por los que quieras aceptar
-            if(usuario === 'admin' && contraseña === 'admin123') {
-              alert('Inicio de sesión exitoso');
-              // Redirige a la página principal o dashboard
-              // prueba sin base de datos
-              window.location.href = 'cliente.html';
-            } else {
-              alert('Usuario o contraseña incorrectos');
-            }
-          }
-          </script>
+<div class="field">
+  <div class="btn-container">
+   <button type="submit" onclick="loginSinBD(event)">Iniciar Sesión</button>
+   <button type="button" onclick="window.location.href='registro.html'">Registrarse</button>
+</div>
+
+<!-- <script>
+  function loginSinBD(e) {
+    e.preventDefault();
+    const usuario = document.getElementById('usuario').value;
+    const contraseña = document.getElementById('contraseña').value;
+//login sin base de datos
+    if(usuario === 'admin' && contraseña === 'admin12') {
+      alert('Inicio de sesión exitoso (Admin)');
+      window.location.href = 'admin.html';
+    } else if(usuario === 'user' && contraseña === 'user123') {
+      alert('Inicio de sesión exitoso (User)');
+      window.location.href = 'cliente.html';
+    } else {
+      alert('Usuario o contraseña incorrectos');
+    }
+  }
+</script>
+ -->
+        
         <!--   <div class="btn-container">
           <button type="submit"  >Iniciar Sesión</button>
           <button type="button" onclick="window.location.href='registro.html'">Registrarse</button>
           </div> -->
 
-        </div>
+</div>
 
         
         <a href="olvidaste.html">¿Olvidaste tu contraseña?</a>
@@ -73,4 +80,3 @@
 
 </body>
 </html>
-

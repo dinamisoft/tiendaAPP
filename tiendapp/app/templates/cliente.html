@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../static/assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="../static/assets/js/script.js"></script>
+    <script src="../static/assets/js/cerrarseccion.js"></script>
 </head>
 <body>
     <header class="topbar">
@@ -277,10 +278,17 @@
                         <h2>¿Estás seguro que quieres cerrar sesión?</h2>
                         <p>Tendrás que volver a ingresar tus credenciales para acceder a tu cuenta.</p>
                         <div class="logout-buttons">
-                            <button class="confirm-btn">Sí, cerrar sesión</button>
+                            <button class="confirm-btn" onclick="cerrarSesion()">Sí, cerrar sesión</button>
                             <button class="cancel-btn" onclick="history.back()">Cancelar</button>
                         </div>
                     </div>
+                    <script>
+                    function cerrarSesion() {
+                        // Aquí puedes limpiar datos de sesión si usas localStorage/sessionStorage
+                        // Por ejemplo: localStorage.clear();
+                        window.location.href = "login.html";
+                    }
+                    </script>
                 </section>
             </div>
         </main>

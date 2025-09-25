@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiendApp - Administrador</title>
+    <link rel="stylesheet" href="../static/assets/css/style.css">
+    <script src="../static/assets/js/cerrarseccion.js" defer></script>
+</head>
+<body>
+    <div class="topbar">
+        <div class="logo">
+            <img src="../static/assets/img/logo.png" alt="Logo TiendApp">
+            <span><h2>TiendApp</h2></span>
+        </div>
+        <div class="profile">
+            <div class="profile-info">
+                <div class="name">Administrador</div>
+                <div class="role">Perfil</div>
+            </div>
+            <div class="avatar">
+                <img src="../static/assets/img/fotoperfil.jpg" alt="Avatar">
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="menu">
+                <a href="#welcome-section">🏠 Admin Dashboard</a>
+                <a href="#compras-section">🛒 Compras</a>
+                <a href="#ventas-section">📈 Ventas</a>
+                <a href="#creditos-section">👥 Créditos</a>
+                <a href="#inventario-section">📦 Inventario</a>
+                <a href="#calificacion-section">⭐ Calificación</a>
+                <a href="#reportes-section">📊 Reportes</a>
+                <a href="#configuracion-section">⚙️ Configuración</a>
+                <a href="#ayuda-section">❓ Ayuda</a>
+                <a href="#cerrar-sesion">🚪 Cerrar sesión</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-sections">
+                <section id="welcome-section" class="page-section welcome-section">
+                <div>
+                    <h1 id="bienvenida">¡Bienvenido!</h1>
+                    <h2>¡Hola Administrador!</h2>
+                    <p>Este es tu panel para gestionar las compras, ventas, clientes, inventarios y demás de manera rápida y segura.</p>
+                </div>
+                </section>
+
+                <section id="compras-section" class="page-section">
+                    <h2>Compras</h2>
+                    <div class="card">
+                        <div class="form-section">
+                            <div>
+                                <label for="proveedor">Seleccionar proveedor:</label>
+                                <select id="proveedor">
+                                    <option>-- Seleccionar un proveedor --</option>
+                                    <option>Colanta</option>
+                                    <option>Familia</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="producto-compra">Seleccionar producto:</label>
+                                <select id="producto-compra">
+                                    <option>-- Seleccionar un producto --</option>
+                                    <option>Leche Entera</option>
+                                    <option>Papel Higienico</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="cantidad-compra">Ingresar cantidad:</label>
+                                <input type="text" id="cantidad-compra" placeholder="-- Cantidad --">
+                            </div>
+                        </div>
+                        <button style="width: 30%; margin-top: 20px; background-color: #ffa600; color: #ffffff; border-radius: 7px;"><b>Registrar Compra</b></button>
+                    </div>
+                    <div class="card" style="margin-top: 20px;">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Proveedor</th>
+                                        <th>Producto</th>
+                                        <th>Fecha de Compra</th>
+                                        <th>Cantidad</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Colanta</td>
+                                        <td>Leche Entera</td>
+                                        <td>01/06/2024</td>
+                                        <td>10</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Familia</td>
+                                        <td>Papel Higienico</td>
+                                        <td>25/07/2024</td>
+                                        <td>15</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="ventas-section" class="page-section">
+                    <h2>Ventas</h2>
+                    <div class="sales-summary">
+                        <div class="sales-card">
+                            <h3>Ventas Diarias</h3>
+                            <p>$256.643</p>
+                        </div>
+                        <div class="sales-card">
+                            <h3>Ventas Mensuales</h3>
+                            <p>$4.277.392</p>
+                        </div>
+                        <div class="sales-card">
+                            <h3>Balance</h3>
+                            <p>$1.197.670</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Producto</th>
+                                        <th>Categoría</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio Unitario</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>02/09/2025</td>
+                                        <td>Arroz Diana</td>
+                                        <td>Granos</td>
+                                        <td>5 kg</td>
+                                        <td>$4.490</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02/09/2025</td>
+                                        <td>Gaseosa Postobón</td>
+                                        <td>Bebidas</td>
+                                        <td>10 u. x 1.5 Lt</td>
+                                        <td>$5.000</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>01/09/2025</td>
+                                        <td>Jabon Líquido</td>
+                                        <td>Limpieza</td>
+                                        <td>5 u. x 1 Lt</td>
+                                        <td>$5.500</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>02/09/2025</td>
+                                        <td>Papel Higienico</td>
+                                        <td>Limpieza</td>
+                                        <td>5 u.</td>
+                                        <td>$2.000</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>03/09/2025</td>
+                                        <td>Leche Entera</td>
+                                        <td>Lácteos</td>
+                                        <td>4 u. x 1 Lt</td>
+                                        <td>$3.500</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>03/09/2025</td>
+                                        <td>Lentejas</td>
+                                        <td>Granos</td>
+                                        <td>3 kg</td>
+                                        <td>$7.500</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="creditos-section" class="page-section">
+                    <div class="credit-header">
+                        <h2>Clientes con Créditos Activos</h2>
+                        <div class="total-debt-box">
+                            Total de deudas: $122.380
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>Teléfono</th>
+                                        <th>Producto</th>
+                                        <th>Cantidad</th>
+                                        <th>Valor a Pagar</th>
+                                        <th>Fecha de crédito</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Juan Pérez</td>
+                                        <td>3201234567</td>
+                                        <td>Arroz Diana</td>
+                                        <td>8 kg</td>
+                                        <td>$35.920</td>
+                                        <td>15/01/2025</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>María Lopez</td>
+                                        <td>3019876543</td>
+                                        <td>Leche Entera</td>
+                                        <td>5 Lt</td>
+                                        <td>$17.500</td>
+                                        <td>07/02/2025</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carlos Pua</td>
+                                        <td>3114567890</td>
+                                        <td>Papel Higienico</td>
+                                        <td>10 u.</td>
+                                        <td>$10.000</td>
+                                        <td>28/05/2025</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carlos Pua</td>
+                                        <td>3114567890</td>
+                                        <td>Leche Entera</td>
+                                        <td>7 u.</td>
+                                        <td>$24.500</td>
+                                        <td>28/05/2025</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ana Martinez</td>
+                                        <td>3129871101</td>
+                                        <td>Jabón Líquido</td>
+                                        <td>3 u.</td>
+                                        <td>$16.500</td>
+                                        <td>19/07/2025</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ana Martinez</td>
+                                        <td>3129871101</td>
+                                        <td>Arroz Diana</td>
+                                        <td>4 kg</td>
+                                        <td>$17.960</td>
+                                        <td>19/07/2025</td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="inventario-section" class="page-section">
+                    <h2>Inventario</h2>
+                    <div class="inventory-status-cards">
+                        <div class="card status-card products">
+                            <h3>Productos Registrados</h3>
+                            <p>25</p>
+                        </div>
+                        <div class="card status-card low-stock">
+                            <h3>Bajo Stock</h3>
+                            <p>2</p>
+                        </div>
+                        <div class="card status-card sold-out">
+                            <h3>Agotados</h3>
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Categoría</th>
+                                        <th>Stock Actual</th>
+                                        <th>Stock Mínimo</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Arroz Diana</td>
+                                        <td>Granos</td>
+                                        <td>40 Kg</td>
+                                        <td>10 kg</td>
+                                        <td><span class="status-pill status-ok">✅</span></td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jabon Líquido</td>
+                                        <td>Limpieza</td>
+                                        <td>5 x 1 Lt</td>
+                                        <td>5 x 1 Lt</td>
+                                        <td><span class="status-pill status-low">Bajo</span></td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Leche Entera</td>
+                                        <td>Lácteos</td>
+                                        <td>6 x 1 Lt</td>
+                                        <td>4 x 1 Lt</td>
+                                        <td><span class="status-pill status-ok">✅</span></td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lentejas</td>
+                                        <td>Granos</td>
+                                        <td>15 Kg</td>
+                                        <td>8 Kg</td>
+                                        <td><span class="status-pill status-ok">✅</span></td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pan Ramo</td>
+                                        <td>Panadería</td>
+                                        <td>4 u.</td>
+                                        <td>6 u.</td>
+                                        <td><span class="status-pill status-low">Bajo</span></td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Papel Higienico</td>
+                                        <td>Limpieza</td>
+                                        <td>0 u.</td>
+                                        <td>7 u.</td>
+                                        <td><span class="status-pill status-sold-out">No</span></td>
+                                        <td class="action-buttons">
+                                            <button>✏️</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="calificacion-section" class="page-section">
+                    <h2>Calificaciones</h2>
+                    <div class="card rating-summary">
+                        <h2>4.3</h2>
+                        <p>Total de reseñas 120</p>
+                        <div class="rating-stars">
+                            <span class="star-rating">⭐⭐⭐⭐</span>
+                            <span class="star-half">☆</span>
+                        </div>
+                    </div>
+                    <div class="card rating-list">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Cliente</th>
+                                        <th>Comentario</th>
+                                        <th>Calificación</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Maria Jimenez</td>
+                                        <td>Excelente variedad y calidad</td>
+                                        <td><span class="rating-stars">⭐⭐⭐⭐⭐</span></td>
+                                            <td class="action-buttons">
+                                            <button>🔍</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Juan Martinez</td>
+                                        <td>Mejora en la atención al cliente</td>
+                                        <td><span class="rating-stars">⭐⭐⭐⭐</span></td>
+                                      <td class="action-buttons">
+                                            <button>🔍</button>
+                                            <button>🗑️</button>
+                                        </td>  
+                                    </tr>
+                                    <tr>
+                                        <td>Ayesha Khan</td>
+                                        <td>Productos en mal estado</td>
+                                        <td><span class="rating-stars">⭐</span></td>
+                                        <td class="action-buttons">
+                                            <button>🔍</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Luis Pérez</td>
+                                        <td>Excelente servicio</td>
+                                        <td><span class="rating-stars">⭐⭐⭐⭐⭐</span></td>
+                                        <td class="action-buttons">
+                                            <button>🔍</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jorge Paz</td>
+                                        <td>Poco tiempo de espera</td>
+                                        <td><span class="rating-stars">⭐⭐⭐</span></td>
+                                        <td class="action-buttons">
+                                            <button>🔍</button>
+                                            <button>🗑️</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="reportes-section" class="page-section">
+                    <h2>Reportes</h2>
+                    <div class="report-grid">
+                        <div class="card report-card low-stock">
+                            <span class="icon">⚠️</span>
+                            <h3>Bajo stock</h3>
+                            <p>2 productos con bajo stock.</p>
+                        </div>
+                        <div class="card report-card maintenance">
+                            <span class="icon">⚙️</span>
+                            <h3>Mantenimiento</h3>
+                            <p>Actualización de software disponible.</p>
+                        </div>
+                        <div class="card report-card negative-comments">
+                            <span class="icon">⭐</span>
+                            <h3>Malos Comentarios</h3>
+                            <p>Tienes 2 nuevos comentarios negativos.</p>
+                        </div>
+                        <div class="card client-actions">
+                            <h2>Cliente</h2>
+                            <div class="caja-busqueda">
+                            <input type="text" placeholder="Buscar...">
+                            </div>
+                            <br>
+                            <button class="modify">Modificar</button>
+                            <button class="delete">Eliminar</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="configuracion-section" class="page-section">
+                    <h2>Configuración</h2>
+                    <div class="card config-options">
+                        <div class="config-option">
+                            <div class="icon-text">
+                                <span>🌐 Idioma</span>
+                                
+                            </div>
+                            <span>Español</span>
+                        </div>
+                        <div class="config-option">
+                            <div class="icon-text">
+                                <span>💲 Moneda</span>        
+                            </div>
+                            <span>Peso (Col)</span>
+                        </div>
+                        <div class="config-option">
+                            <div class="icon-text">
+                                <span>🌙 Modo oscuro</span>
+                            </div>
+                            <div class="toggle-switch"></div>
+                        </div>
+                        <div class="config-option">
+                            <div class="icon-text">
+                                <span>🔔 Notificaciones</span>
+                            </div>
+                            <div class="toggle-switch"></div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="ayuda-section" class="page-section">
+                    <h2>Ayuda</h2>
+                    <div class="card help-options">
+                        <div class="help-option">
+                            <div class="icon-text">
+                                <span>✉️ Correo Electronico</span>    
+                            </div>
+                            <span>soporte@tiendapp.com</span>
+                        </div>
+                        <br>
+                        <div class="help-option">
+                            <div class="icon-text">
+                                <span>📞 Número de contacto</span>
+                            </div>
+                            <span>+57 **********</span>
+                        </div>
+                        <br>
+                        <div class="help-option">
+                            <div class="icon-text">
+                                <span>💬 Ir a soporte en linea</span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="help-option">
+                            <div class="icon-text">
+                                <span>🎧 Chat en vivo</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="cerrar-sesion" class="page-section">
+                    <div class="modal">
+                         <h2>¿Estás seguro que deseas cerrar sesión?</h2>
+                         <button id="confirm" name="boton1">Sí, cerrar sesión</button>
+                         <button id="cancel">No, cancelar</button>
+                         
+                    </div>
+               </section>
+                 </div>        
+            </div>
+        </main>
+    </div>
+</body>
+</html>
