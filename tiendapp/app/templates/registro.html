@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/assets/css/registros.css">
-  <script src="../static/assets/js/scriptlogin.js"></script>
+  <!-- <script src="../static/assets/js/scriptlogin.js"></script> -->
   <title>Registro - TiendApp</title>
 </head>
+
 <body>
   <div class="container">
     <h1>Registro</h1>
     <form>
       <div class="field">
         <div class="left">Nombre y Apellidos</div>
-        <input id="nombre" type="text" required>
+        <input id="nombre" type="text">
       </div>
 
-<!--       <div class="field">
+      <!--       <div class="field">
         <div class="left">Tipo de documento</div>
         <select id="tipoDoc" required>
           <option value="">Seleccione</option>
@@ -28,32 +30,32 @@
 
       <div class="field">
         <div class="left">ID</div>
-        <input id="ID" type="text" required>
+        <input id="ID" type="text">
       </div>
 
       <div class="field">
         <div class="left">Correo</div>
-        <input id="correo" type="email" required>
+        <input id="correo" type="email">
       </div>
 
       <div class="field">
         <div class="left">Contraseña</div>
-        <input id="contraseña" type="password" required>
+        <input id="contraseña" type="password">
       </div>
 
       <div class="field">
         <div class="left">Confirmar contraseña</div>
-        <input id="confirmarContraseña" type="password" required>
+        <input id="confirmarContraseña" type="password">
       </div>
 
       <div class="field">
         <div class="left">Teléfono</div>
-        <input id="telefono" type="tel" required>
+        <input id="telefono" type="tel">
       </div>
 
       <div class="field">
         <div class="left">Sexo</div>
-        <select id="sexo" required>
+        <select id="sexo">
           <option value="">Seleccione</option>
           <option value="M">Masculino</option>
           <option value="F">Femenino</option>
@@ -62,8 +64,8 @@
       </div>
 
       <div class="botones">
-        <button type="submit">Registrarse</button>
-        <button type="button" onclick="window.location.href='login.html'">Volver al Login</button>
+        <button type="submit" formaction="{{url_for('login')}}">Registrarse</button>
+        <button type="submit" formaction="{{url_for('login')}}">Volver al Login</button>
       </div>
     </form>
 
@@ -72,4 +74,5 @@
     </div>
   </div>
 </body>
+
 </html>

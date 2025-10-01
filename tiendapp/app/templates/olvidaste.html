@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recuperar Contraseña</title>
   <link rel="stylesheet" href="../static/assets/css/olvidasteus.css">
-  <script src="../static/assets/js/scriptlogin.js"></script>
-  
+  <!-- <script src="../static/assets/js/scriptlogin.js"></script> -->
+
 </head>
+
 <body>
   <div class="contenedor">
     <h2>Recuperar Contraseña</h2>
-    
+
     <form>
       <label for="email">Correo Eletrónico</label>
-      <input type="email" id="email" placeholder="" required>
+      <input type="email" id="email" placeholder="">
 
       <div class="botones">
         <button type="submit" class="btn enviar">Enviar</button>
-        <button type="button" class="btn cancelar" onclick="window.location.href='login.html'">Cancelar</button>
+        <button type="submit" class="btn cancelar" formaction="{{url_for('login')}}">Cancelar</button>
       </div>
     </form>
 
     <p class="registro">
-      ¿No tienes cuenta? <a href="registro.html">Regístrate aquí.</a>
+      ¿No tienes cuenta? <a href="{{url_for('registro')}}">Regístrate aquí.</a>
     </p>
 
     <footer>
@@ -31,4 +33,5 @@
     </footer>
   </div>
 </body>
+
 </html>

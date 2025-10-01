@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="../static/assets/css/login.css">
   <title>TIENDAPP - Login</title>
-  <script src="../static/assets/js/scriptlogin.js"></script>
-  <script src="../static/assets/js/loginsinbdatos.js"></script>
+  <!-- <script src="../static/assets/js/scriptlogin.js"></script> -->
+  <!-- <script src="../static/assets/js/loginsinbdatos.js"></script> -->
 
 </head>
+
 <body>
 
   <div class="contenedor">
-      <h1>login</h1>
+    <h1>login</h1>
 
-      <form id="loginForm" >
-        <div class="field">
-          <div class="left">Tipo de ingreso</div>
-          <div class="input-wrap">
-            <select aria-label="Tipo de ingreso" id="tipoIngreso" name="tipoIngreso">
-              <option value="usuario">USUARIO</option>
-              <option value="admin" selected>ADMIN</option>
-            </select>
-          </div>
+    <form id="loginForm">
+      <!-- <div class="field">
+        <div class="left">Tipo de ingreso</div>
+        <div class="input-wrap">
+          <select aria-label="Tipo de ingreso" id="tipoIngreso" name="tipoIngreso">
+            <option value="usuario">USUARIO</option>
+            <option value="admin" selected>ADMIN</option>
+          </select>
+        </div>
+      </div> -->
+
+      <div class="field">
+        <div class="left">Usuario</div>
+        <input type="text" id="idusuario" name="idusuario">
+      </div>
+
+
+      <div class="field">
+        <div class="left">Contraseña</div>
+        <input type="password" id="passwordusuario" name="passwordusuario">
+      </div>
+
+
+
+      <div class="field">
+        <div class="btn-container">
+          <!-- <button type="submit" onclick="loginSinBD(event)">Iniciar Sesión</button> -->
+          <button type="submit" formaction="{{url_for('cliente')}}">Iniciar Sesión</button>
+          <!-- <button type="button" onclick="window.location.href='registro.html'">Registrarse</button> -->
+          <button type="submit" formaction="{{url_for('registro')}}">Registrarse</button>
         </div>
 
-        <div class="field">
-          <div class="left">Usuario</div>
-          <input type="text" id="usuario" name="usuario" >
-          </div>
-        
-
-        <div class="field">
-          <div class="left">Contraseña</div>
-            <input type="password" id="contraseña" name="contraseña" >
-          </div>
-        
-
-          
-<div class="field">
-  <div class="btn-container">
-   <button type="submit" onclick="loginSinBD(event)">Iniciar Sesión</button>
-   <button type="button" onclick="window.location.href='registro.html'">Registrarse</button>
-</div>
-
-<!-- <script>
+        <!-- <script>
   function loginSinBD(e) {
     e.preventDefault();
     const usuario = document.getElementById('usuario').value;
@@ -62,21 +66,22 @@
   }
 </script>
  -->
-        
+
         <!--   <div class="btn-container">
           <button type="submit"  >Iniciar Sesión</button>
           <button type="button" onclick="window.location.href='registro.html'">Registrarse</button>
           </div> -->
 
-</div>
+      </div>
 
-        
-        <a href="olvidaste.html">¿Olvidaste tu contraseña?</a>
-        
 
-        <div class="meta">Versión 0.0.0 | Derechos Reservados 2025</div>
-      </form>
-</div>
+      <a href="{{url_for('olvidaste')}}">¿Olvidaste tu contraseña?</a>
+
+
+      <div class="meta">Versión 0.0.0 | Derechos Reservados 2025</div>
+    </form>
+  </div>
 
 </body>
+
 </html>
