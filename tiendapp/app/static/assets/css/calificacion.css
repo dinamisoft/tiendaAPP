@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-
+    
 }
 
 /* Barra de navegación superior */
@@ -171,64 +171,67 @@ body {
   font-weight: bold;
 }
 
-/* Sección de Configuración */
-.config-area {
+/* Sección de Calificación */
+.rating-area {
     flex-grow: 1;
-    background: transparent;
-    padding: 20px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: transparent;
 }
 
-.page-title {
+.rating-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.rating-title {
     font-size: 1.8em;
-    font-weight: bold;
-    color: #1b5e20;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.rating-subtitle {
+    font-size: 1em;
+    color: #666;
     margin-bottom: 20px;
 }
 
-.config-panel {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.stars-container {
+    color: gold;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-.panel-header {
-    font-size: 1.4em;
+.stars-container .far {
+    color: #ccc;
+}
+
+.rating-call-to-action {
+    font-size: 1.2em;
     font-weight: bold;
+    color: #333;
     margin-bottom: 15px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
 }
 
-.panel-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.form-group label {
-    font-size: 0.9em;
-    color: #666;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"] {
+.comment-box {
+    width: 90%;
+    height: 100px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1em;
+    resize: none;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
 }
 
-.action-button {
+.send-button {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -237,20 +240,9 @@ body {
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    align-self: flex-start;
     transition: background-color 0.3s;
 }
 
-.action-button:hover {
+.send-button:hover {
     background-color: #388e3c;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.checkbox-group input[type="checkbox"] {
-    accent-color: #4CAF50;
 }

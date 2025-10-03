@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-
+    
 }
 
 /* Barra de navegación superior */
@@ -170,87 +170,70 @@ body {
   background: #1f4020;
   font-weight: bold;
 }
-
-/* Sección de Configuración */
-.config-area {
+/* Sección de Cerrar sesión */
+.logout-area {
     flex-grow: 1;
-    background: transparent;
-    padding: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: transparent;
+}
+
+.logout-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.logout-title {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.logout-text {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.logout-buttons {
+    display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
-.page-title {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #1b5e20;
-    margin-bottom: 20px;
-}
-
-.config-panel {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.panel-header {
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-}
-
-.panel-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.form-group label {
-    font-size: 0.9em;
-    color: #666;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.action-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+.confirm-button,
+.cancel-button {
     padding: 12px 25px;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    align-self: flex-start;
     transition: background-color 0.3s;
 }
 
-.action-button:hover {
+.confirm-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.confirm-button:hover {
     background-color: #388e3c;
 }
 
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.cancel-button {
+    background-color: #ccc;
+    color: #333;
+    border: 1px solid #ccc;
 }
 
-.checkbox-group input[type="checkbox"] {
-    accent-color: #4CAF50;
+.cancel-button:hover {
+    background-color: #bbb;
 }

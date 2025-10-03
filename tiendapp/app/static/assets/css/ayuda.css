@@ -1,0 +1,238 @@
+/* Estilos generales (mantener de los ejemplos anteriores) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url('../img/fondo_tiendapp.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+/* Barra de navegación superior */
+.top-nav {
+    background-color: #073108;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.app-logo-image {
+    height: 35px;
+}
+
+.app-logo {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.search-and-cart-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.search-bar {
+    background-color: #4CAF50;
+    border-radius: 20px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.search-bar i {
+    margin-right: 10px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+}
+
+.search-bar input::placeholder {
+    color: #ddd;
+}
+
+.main-options {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.main-options i {
+    font-size: 1.3em;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.2;
+}
+
+.user-info span:first-child {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.profile-text {
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.profile-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+/* Área de contenido principal */
+.content-area {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Menú lateral */
+.side-bar {
+  width: 220px;
+  background: #2c5f2d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+}
+
+.side-bar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-bar li {
+  margin: 5px 0;
+}
+
+.side-bar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  transition: background 0.3s, padding-left 0.3s;
+}
+
+.side-bar-link:hover {
+  background: #3e7d3e;
+  padding-left: 30px;
+}
+
+.side-bar-link.active {
+  background: #1f4020;
+  font-weight: bold;
+}
+/* Sección de Ayuda y Soporte */
+.help-area {
+    flex-grow: 1;
+    background: transparent;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.help-header {
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.help-subtitle {
+    font-size: 1em;
+    color: #666;
+}
+
+.help-panel {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.panel-header {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.panel-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.panel-item:last-child {
+    border-bottom: none;
+}
+
+.panel-icon {
+    font-size: 2em;
+    color: #4CAF50;
+}
+
+.panel-text h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.panel-text p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #666;
+}
