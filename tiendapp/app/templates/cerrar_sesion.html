@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TiendApp - Configuración</title>
-    <link rel="stylesheet" href="css/configuracion.css">
+    <title>TiendApp - Cerrar sesión</title>
+    <link rel="stylesheet" href="css/cerrar_sesion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
@@ -47,43 +47,16 @@
                     <li><a href="#" class="side-bar-link">Cerrar sesión.</a></li>
                 </ul>
             </aside>
-            
-            <section class="config-area">
-                <h1 class="page-title">Configuración</h1>
-                
-                <div class="config-panel account-info">
-                    <div class="panel-header">Información de la cuenta</div>
-                    <div class="panel-content">
-                        <div class="form-group">
-                            <label for="full-name">Nombre completo</label>
-                            <input type="text" id="full-name" value="Antonio Marin" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" value="antonio@gmail.com" readonly>
-                        </div>
-                        <button class="action-button">Cambiar contraseña</button>
-                    </div>
-                </div>
-
-                <div class="config-panel preferences">
-                    <div class="panel-header">Preferencias</div>
-                    <div class="panel-content">
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="notifications" checked>
-                            <label for="notifications">Recibir notificaciones</label>
-                        </div>
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="dark-mode">
-                            <label for="dark-mode">Modo oscuro</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="config-panel payment-methods">
-                    <div class="panel-header">Métodos de pago</div>
-                    <div class="panel-content">
-                        <button class="action-button">Añadir nuevo método</button>
+            </nav>
+            <!--las listas donde se vayan a colocar botones cuya funcion sea brir otra
+            pestaña deberiantener un estructura similar a la lista de del side-bar-->
+            <section class="logout-area">
+                <div class="logout-card">
+                    <h1 class="logout-title">¿Estás seguro que quieres cerrar sesión?</h1>
+                    <p class="logout-text">Tendrás que volver a ingresar tus credenciales para acceder a tu cuenta.</p>
+                    <div class="logout-buttons">
+                        <button class="confirm-button">Sí, cerrar sesión</button>
+                        <button class="cancel-button">Cancelar</button>
                     </div>
                 </div>
             </section>

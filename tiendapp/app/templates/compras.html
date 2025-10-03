@@ -1,75 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="02-css/compras.css">
-    <title>Document</title>
+    <title>TiendApp - Compra</title>
+    <link rel="stylesheet" href="css/compras.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!--para la barra de navegacion-->
-    <header class="barraSuperior">
-        <div class="logo"> teindaAPP</div>
-        <input type="text" class="buscar" placeholder="buscar...">
-        <nav class="nav-der">
-            <a href="#" class="link-mis-compras">mis compras.</a>
-            <div class="perfil">Julio Cesar.</div>
-        </nav>
-    </header>
-    <div class="sintenedor">
-    
-    <!-- para el menú lateral -->
-    <aside class="side-bar">
-    <ul>
-       <li><a href="#" class="side-bar-link"> Compras.</a></li>
-        <li><a href="#" class="side-bar-link">Historial de compras.</a></li>
-        <li><a href="#" class="side-bar-link">Calificacíon.</a></li>
-        <li><a href="#" class="side-bar-link">Configuracion.</a></li>
-        <li><a href="#" class="side-bar-link">ayuda.</a></li>
-        <li><a href="#" class="side-bar-link">Cerar sesíon.</a></li>
-    </ul>
-    </aside>
-
-    <!-- seleccíon principal -->
-    <main class="contenedor-core">
-    <!--para el menú de -->
-    <nav class="categorias">
-        <button>Verduras.</button>
-        <button>Frutas.</button>
-        <button>Lácteos.</button>
-        <button>Abarrotes.</button>
-        <button>Bebidas.</button>
-      </nav>
-
-    <!-- Productos -->
-      <section class="productos">
-        <div class="card">
-          <img id="producto" src="img/fresa.jpg" alt="Fresa">
-          <h3>Fresa</h3>
-          <p>Gramo a $24,98.</p>
-          <span>$12.490</span>
-          <button>Agregar.</button>
-        </div>
-        <div class="card">
-          <img id="producto" src="img/banana.jpg" alt="Banano">
-          <h3>Banano Maduro.</h3>
-          <p>Gramo a $3,29.</p>
-          <span>$3.290</span>
-          <button>Agregar.</button>
-        </div>
-        <div class="card">
-          <img id="producto" src="img/manzana.jpg" alt="Manzana">
-          <h3>Manzana.</h3>
-          <p>Gramo a $13,98.</p>
-          <span>$13.980</span>
-          <button>Agregar.</button>
-        </div>
-        <!--puedo poner mas, pero que paja-->
-        </section>
-        <!-- Oferta especial -->
-      <div class="banner">
-        <strong>OFERTA ESPECIAL.</strong> - ¡Hasta 30% de Descuento en todas las Frutas y Verduras Frescas!
+    <div class="container">
+        <header class="top-nav">
+            <div class="app-logo-container">
+                <img src="img/logo.png" alt="Logo de TiendApp" class="app-logo-image">
+                <div class="app-logo">TiendApp</div>
             </div>
+            
+            <div class="search-and-cart-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar productos...">
+                </div>
+                <div class="main-options">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Mis Compras</span>
+                </div>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-info">
+                    <span>Antonio Marin</span>
+                    <span class="profile-text">Perfil</span>
+                </div>
+                <img src="img/fotoperfil.jpg" alt="Foto de perfil" class="profile-photo">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </header>
+        
+        <main class="content-area">
+            <aside class="side-bar">
+                <ul>
+                    <li><a href="#" class="side-bar-link">Compras.</a></li>
+                    <li><a href="#" class="side-bar-link">Historial de compras.</a></li>
+                    <li><a href="#" class="side-bar-link">Calificación.</a></li>
+                    <li><a href="#" class="side-bar-link">Configuración.</a></li>
+                    <li><a href="#" class="side-bar-link">Ayuda.</a></li>
+                    <li><a href="#" class="side-bar-link">Cerrar sesión.</a></li>
+                </ul>
+            </aside>
+            
+            <section class="product-area">
+                <!--
+                <div class="category-tabs">
+                    <span>Verduras</span>
+                    <span class="active">Frutas</span>
+                    <span>Lácteos</span>
+                    <span>Abarrotes</span>
+                    <span>Bebidas</span>
+                </div>
+                -->
+                <div class="special-offer-banner">
+                    <img src="img/oferta_frutas.png" alt="Oferta" class="offer-image">
+                    <p>¡Hasta 30% de Descuento en todas las Frutas y Verduras Frescas!</p>
+                </div>
+
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="img/fresas.jpg" alt="Fresa">
+                        <h3>Fresa</h3>
+                        <p>Gramo a $24,98</p>
+                        <p class="price">$ 12.490</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/bananos.jpg" alt="Banano Maduro">
+                        <h3>Banano Maduro</h3>
+                        <p>Gramo a $3,29</p>
+                        <p class="price">$ 3.290</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/manzana.jpg" alt="Manzana Verde">
+                        <h3>Manzana Verde</h3>
+                        <p>Gramo a $13,98</p>
+                        <p class="price">$ 13.980</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/naranjas.jpg" alt="Naranja">
+                        <h3>Naranja</h3>
+                        <p>Gramo a $3,19</p>
+                        <p class="price">$ 7.990</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/uvas.jpg" alt="Uvas">
+                        <h3>Uvas</h3>
+                        <p>Gramo a $16,98</p>
+                        <p class="price">$ 16.980</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/kiwi.jpg" alt="Kiwi">
+                        <h3>Kiwi</h3>
+                        <p>Gramo a $25,99</p>
+                        <p class="price">$ 25.990</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/tomate.jpg" alt="Tomate">
+                        <h3>Tomate</h3>
+                        <p>Gramo a $34,09</p>
+                        <p class="price">$ 12.490</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/fresas.jpg" alt="Papa">
+                        <h3>Papa</h3>
+                        <p>Gramo a $98,48</p>
+                        <p class="price">$ 12.490</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/escoba.jpg" alt="Escoba">
+                        <h3>Escoba</h3>
+                        <p>unidad a $22,09</p>
+                        <p class="price">$ 10.490</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/Gaseosa.jpg" alt="Gaeosa">
+                        <h3>Gseosa de 50Ml*6</h3>
+                        <p>lote a $99,38</p>
+                        <p class="price">$ 87.90</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="img/comida-gato" alt="Comida-gato">
+                        <h3>Comida para gato mirringo</h3>
+                        <p>kilo a $235, 04</p>
+                        <p class="price">$ 32.40</p>
+                        <button class="add-button">Agregar</button>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 </body>

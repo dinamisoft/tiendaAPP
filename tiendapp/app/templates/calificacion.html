@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiendApp - Calificación</title>
+    <link rel="stylesheet" href="css/calificacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="top-nav">
+            <div class="app-logo-container">
+                <img src="img/logo.png" alt="Logo de TiendApp" class="app-logo-image">
+                <div class="app-logo">TiendApp</div>
+            </div>
+            
+            <div class="search-and-cart-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar productos...">
+                </div>
+                <div class="main-options">
+                    <span>Mis Compras</span>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+            
+            <div class="user-profile">
+                <div class="user-info">
+                    <span>Antonio Marin</span>
+                    <span class="profile-text">Perfil</span>
+                </div>
+                <img src="img/fotoperfil.jpg" alt="Foto de perfil" class="profile-photo">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </header>
+        
+        <main class="content-area">
+            <aside class="side-bar">
+            <ul>
+                <li><a href="#" class="side-bar-link">Compras.</a></li>
+                <li><a href="#" class="side-bar-link">Historial de compras.</a></li>
+                <li><a href="#" class="side-bar-link">Calificación.</a></li>
+                <li><a href="#" class="side-bar-link">Configuración.</a></li>
+                <li><a href="#" class="side-bar-link">Ayuda.</a></li>
+                <li><a href="#" class="side-bar-link">Cerrar sesión.</a></li>
+                </ul>
+            </aside>
+            
+            <section class="rating-area">
+                <div class="rating-card">
+                    <h1 class="rating-title">¡Valora tu última experiencia!</h1>
+                    <p class="rating-subtitle">Tu opinión nos ayuda a mejorar.</p>
+                    <div class="stars-container">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <p class="rating-call-to-action">¡Déjanos saber tu opinión!</p>
+                    <textarea class="comment-box" placeholder="Escribe tu comentario aquí..."></textarea>
+                    <button class="send-button">Enviar</button>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
