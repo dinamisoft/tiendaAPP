@@ -14,18 +14,25 @@
 <body>
 
   <div class="contenedor">
+
+
     <h1>login</h1>
 
-    <form id="loginForm">
-      <!-- <div class="field">
-        <div class="left">Tipo de ingreso</div>
-        <div class="input-wrap">
-          <select aria-label="Tipo de ingreso" id="tipoIngreso" name="tipoIngreso">
-            <option value="usuario">USUARIO</option>
-            <option value="admin" selected>ADMIN</option>
-          </select>
-        </div>
-      </div> -->
+
+    <form id="loginForm" action="/login" method="post">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <br />
+      {% for message in messages %}
+      <div class="alert alert-primary alert-dissmissible" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
       <div class="field">
         <div class="left">Usuario</div>
@@ -43,7 +50,7 @@
       <div class="field">
         <div class="btn-container">
           <!-- <button type="submit" onclick="loginSinBD(event)">Iniciar Sesión</button> -->
-          <button type="submit" formaction="{{url_for('cliente')}}">Iniciar Sesión</button>
+          <button type="submit" action="/login">Iniciar Sesión</button>
           <!-- <button type="button" onclick="window.location.href='registro.html'">Registrarse</button> -->
           <button type="submit" formaction="{{url_for('registro')}}">Registrarse</button>
         </div>

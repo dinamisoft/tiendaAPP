@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script src="../static/assets/js/script.js"></script>
     <script src="../static/assets/js/cerrarseccion.js"></script>
 </head>
+
 <body>
     <header class="topbar">
         <div class="logo">
@@ -23,7 +25,7 @@
         </div>
         <div class="profile">
             <div class="profile-info">
-                <div class="name">Antonio Marin</div>
+                <div class="name">{{ current_user.nombre}}</div>
                 <div class="role">Perfil</div>
             </div>
             <div class="avatar">
@@ -50,7 +52,7 @@
                     <div class="discount-banner">
                         ¡Aprovecha! 🍊 Descuentos del 15% en Naranjas y Uvas por tiempo limitado.
                     </div>
-                    
+
                     <nav class="categories-bar">
                         <a href="#verduras">Verduras</a>
                         <a href="#frutas" class="active">Frutas</a>
@@ -167,15 +169,18 @@
                                 </div>
                             </div>
                             <ol class="detalles">
-                                <li><strong>Productos Básicos Dominan:</strong> El 47% se concentran en arroz, leche y huevos, productos esenciales de la dieta diaria.</li><br>
-                                <li><strong>Tendencia Saludable:</strong> Las frutas representan 25% de preferencias, mostrando una inclinación hacia la alimentación saludable.</li><br>
-                                <li><strong>Oportunidad de Crecimiento:</strong> Los lácteos procesados (yogurt) tienen menor participación (6%), representando una oportunidad para promociones.</li><br>
+                                <li><strong>Productos Básicos Dominan:</strong> El 47% se concentran en arroz, leche y
+                                    huevos, productos esenciales de la dieta diaria.</li><br>
+                                <li><strong>Tendencia Saludable:</strong> Las frutas representan 25% de preferencias,
+                                    mostrando una inclinación hacia la alimentación saludable.</li><br>
+                                <li><strong>Oportunidad de Crecimiento:</strong> Los lácteos procesados (yogurt) tienen
+                                    menor participación (6%), representando una oportunidad para promociones.</li><br>
                                 <li><strong>Patrón Estacional:</strong> Fresas mantienen demanda estable.</li>
                             </ol>
                         </div>
                     </div>
                 </section>
-                
+
                 <section id="calificacion-section" class="page-section">
                     <div class="card calificacion-content">
                         <h2>¡Valora tu última experiencia!</h2>
@@ -192,7 +197,7 @@
                         <button>Enviar Calificación</button>
                     </div>
                 </section>
-                
+
                 <section id="configuracion-section" class="page-section">
                     <h2>Configuración</h2>
                     <div class="card configuracion-card">
@@ -219,10 +224,11 @@
                         <button class="btn-config">Añadir nuevo método</button>
                     </div>
                 </section>
-                
+
                 <section id="ayuda-section" class="page-section">
                     <h2>Ayuda y Soporte</h2>
-                    <p style="text-align: center; margin-bottom: 30px;">Selecciona una opción para que podamos ayudarte de la mejor manera.</p>
+                    <p style="text-align: center; margin-bottom: 30px;">Selecciona una opción para que podamos ayudarte
+                        de la mejor manera.</p>
                     <div class="card ayuda-card">
                         <h3>Asistencia Rápida</h3>
                         <div class="ayuda-opcion">
@@ -258,12 +264,12 @@
                         </div>
                     </div>
                 </section>
-                
+
                 <section id="carrito-section" class="page-section" style="display: none;">
                     <div class="card">
                         <h2>🛒 Carrito de Compras</h2>
                         <ul id="lista-carrito">
-                            </ul>
+                        </ul>
                         <div class="total-carrito">
                             <h4>Total: $<span id="total-monto">0.00</span></h4>
                         </div>
@@ -278,20 +284,28 @@
                         <h2>¿Estás seguro que quieres cerrar sesión?</h2>
                         <p>Tendrás que volver a ingresar tus credenciales para acceder a tu cuenta.</p>
                         <div class="logout-buttons">
-                            <button class="confirm-btn" onclick="cerrarSesion()">Sí, cerrar sesión</button>
+                            <button class="confirm-btn" onclick="document.getElementById('logoutForm').submit();">Sí,
+                                cerrar sesión</button>
                             <button class="cancel-btn" onclick="history.back()">Cancelar</button>
+                            <!-- <button href="{{ url_for('logout') }}" class="confirm-btn">Sí, cerrar sesión</button>
+                            <button class="cancel-btn" onclick="history.back()">Cancelar</button> -->
                         </div>
                     </div>
                     <script>
-                    function cerrarSesion() {
-                        // Aquí puedes limpiar datos de sesión si usas localStorage/sessionStorage
-                        // Por ejemplo: localStorage.clear();
-                        window.location.href = "login.html";
-                    }
+                        function cerrarSesion() {
+                            // Aquí puedes limpiar datos de sesión si usas localStorage/sessionStorage
+                            // Por ejemplo: localStorage.clear();
+                            window.location.href = "login.html";
+                        }
                     </script>
                 </section>
+
+                <form id="logoutForm" action="{{ url_for('logout') }}" method="POST" style="display: none;">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                </form>
             </div>
         </main>
     </div>
 </body>
+
 </html>
