@@ -1,5 +1,5 @@
 class Config:
-    SECRET_KEY = "clave123"
+    SECRET_KEY = "Aycaramba123"
 
 class DevelopmentConfig():
     DEBUG = True

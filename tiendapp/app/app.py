@@ -1,53 +1,76 @@
+# app.py (fragmento corregido)
 from flask import Flask, flash, redirect, render_template, request, url_for
+# Incluimos g para usar la función cerrar_bd de forma correcta
+from flask import g 
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_wtf.csrf import CSRFProtect
 
-from config import config
+# Importamos las funciones de nuestro módulo db
+import db
+# Debemos importar la función cerrar_bd para que Flask la ejecute al final de cada request
+from db import cerrar_bd 
+import sqlite3
 
-""" import db """
+from config import config, Config
 
 app = Flask(__name__)
+# ⚠️ IMPORTANTE: La línea 'db = sqlite3.connect' ha sido ELIMINADA.
 
+app.config.from_object(Config)
+app.config.from_object(config['development'])
 csfr = CSRFProtect(app)
-""" db = MySQL(app) """
 login_manager_app = LoginManager(app)
 
+# Añadimos este decorador para asegurar que la conexión a la BD se cierra
+# al final de cada contexto de aplicación, previniendo errores de SQLite.
+@app.teardown_appcontext
+def teardown_db(exception):
+    db.cerrar_bd()
 
-@login_manager_app.user_loader #Crear este método para loguear y confirmar el usuario
+
+@login_manager_app.user_loader
 def load_user(id):
-    return ModeloUsuario.get_by_id(db, id)
+    # La llamada ya no requiere el objeto db (la conexión se gestiona internamente)
+    return ModeloUsuario.get_by_id(id)
 
 
 #-- Endpoints --
+
 @app.route('/')
 def index():
-    return render_template('login.html')
+    # Redirige al usuario inmediatamente a la página de login
+    return redirect(url_for('login'))
+
+# ... (otras rutas) ...
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        print(request.form['username'])
-        print(request.form['password'])
-        #return render_template('/auth/login.html')
-        usuario = Usuario(0,request.form['idusuario'], request.form['passwordusuario'])
-        logged_user = ModeloUsuario.login(db, usuario)
-        if logged_user != None:
-            if logged_user.password:
-                login_user(logged_user)
+        # 1. Obtener datos del formulario
+        id_ingresado = request.form['idusuario']
+        password_ingresado = request.form['passwordusuario']
+        usuario_ingresado = Usuario(id_ingresado, None, password_ingresado)
+        
+        # 2. Obtener el objeto usuario de la base de datos (incluye el hash almacenado)
+        usuario_db = ModeloUsuario.login(usuario_ingresado)
+        
+        if usuario_db != None:
+            # 3. Realizar la verificación del hash (USANDO EL HASH ALMACENADO)
+            if Usuario.check_password(usuario_db.password, password_ingresado):
+                # Éxito: Contraseña válida
+                login_user(usuario_db)
                 return redirect(url_for('cliente'))
             else:
-                flash('Contraseña inválida')
+                # Error: Contraseña inválida
+                flash('Usuario y/o contraseña incorrectos')
                 return render_template('login.html')
         else:
-            flash('Usuario no encontrado...')
+            # Error: Usuario no encontrado
+            flash('Usuario no encontrado')
             return render_template('login.html')
     else:
         return render_template('login.html')
-    
-@app.route('/cliente')
-def cliente():
-    return render_template('cliente.html')
 
 
 @app.route('/registro')
@@ -58,79 +81,87 @@ def registro():
 def olvidaste():
     return render_template('olvidaste.html')
 
+@app.route('/cliente')
+@login_required
+def cliente():
+    return render_template('cliente.html')
 
-@app.route('/logout')
+
+@app.route('/logout', methods=['POST'])
+@login_required
 def logout():
     logout_user()
-    return redirect(url_for('login'))
-
-@app.route('/protected')
-@login_required
-def protected():
-    return '<h1>Es una vista protegida, sólo para usuarios autenticados!</h1>'
-
-
-def status_401(error):
-    return redirect(url_for('login'))
-
-
-def status_404(error):
-    return '<h1>Página no encontrada</h1>', 404
-
-
-if __name__ == '__main__':
-    app.config.from_object(config['development'])
-    csfr.init_app(app)
-    app.register_error_handler(401, status_401)
-    app.register_error_handler(404, status_404)
-    app.run()
+    flash('Has cerrado la sesión')
+    return render_template('login.html')
+# ... (otras rutas) ...
 
 
 #-- Entidades
 class Usuario(UserMixin):
-    def __init__(self, IdUsuario, PasswordUsuario="") -> None:
+    # Constructor unificado para login y user_loader
+    # El hash es opcional para user_loader, pero se pasa en el login
+    def __init__(self, IdUsuario, NombreUsuario, PasswordUsuario=None) -> None:
         self.id = IdUsuario
+        self.nombre = NombreUsuario
         self.password = PasswordUsuario
+
+    def get_id(self):
+        # Implementación estándar de UserMixin
+        return str(self.id)
         
     @classmethod
-    def check_password(self, hashed_password, PasswordUsuario):
-        return check_password_hash(hashed_password, PasswordUsuario)
+    def check_password(self, hashed_password, PasswordUsuario_plana):
+        # Esta función ya estaba correcta, usa check_password_hash
+        return check_password_hash(hashed_password, PasswordUsuario_plana)
  
-#print(generate_password_hash("hola"))
+# El print de generate_password_hash es útil para generar el hash inicial, lo dejamos.
+#print(generate_password_hash("Aycaramba123"))
 
 #-- Modelos
 class ModeloUsuario():
      
     @classmethod
-    def login(self, usuario) -> None:
+    def login(self, usuario) -> 'Usuario | None':
         try:
             con = db.conexion()
             cursor = con.cursor()
-            sql = """SELECT IdUsuario, PasswordUsuario 
-                     FROM tblusuarios WHERE IdUsuario = '{}'""".format(usuario.IdUsuario)
-            cursor.execute(sql)
+            
+            # 🚨 CORRECCIÓN CRÍTICA: Prevenir Inyección SQL con parámetros (?)
+            # Nota: Asumo que tu tabla es 'tblusuarios' y la columna es 'PasswordUsuar'
+            id_usuario = usuario.id
+            sql = """SELECT IdUsuario, NombreUsuario, PasswordUsuario FROM tblusuarios WHERE IdUsuario = ?"""
+            # Ejecutamos la consulta pasando el ID como parámetro
+            cursor.execute(sql, (id_usuario,)) 
             row = cursor.fetchone()
+            
             if row != None:
-                usuario = Usuario(row[0], Usuario.check_password(row[1], usuario.PasswordUsuario))
-                return usuario
+                # Construimos el objeto Usuario con el ID (row[0]), Nombre (row[1]) y Hash (row[2])
+                # Corregimos el orden de construcción de Usuario
+                return Usuario(row[0], row[1], row[2]) 
             else:
                 return None
         except Exception as ex:
-            raise RuntimeError(ex)
+            # Es mejor manejar o loggear el error
+            print(f"Error en ModeloUsuario.login: {ex}")
+            return None
     
     @classmethod
-    def get_by_id(self, db, id) -> 'Usuario | None':
+    def get_by_id(self, id) -> 'Usuario | None':
         try:
             con = db.conexion()
             cursor = con.cursor()
-            sql = "SELECT IdUsuario, PasswordUsuario FROM tblUsuarios WHERE IdUsuario = {}".format(id)
-            cursor.execute(sql)
+            
+            # 🚨 CORRECCIÓN: Usar parámetros (?) y solo necesitamos ID y Nombre para user_loader
+            sql = "SELECT IdUsuario, NombreUsuario FROM tblusuarios WHERE IdUsuario = ?"
+            cursor.execute(sql, (id,))
             row = cursor.fetchone()
+            
             if row != None:
-                return Usuario(row[0], None, row[1])
+                # Construimos el objeto Usuario con IdUsuario y NombreUsuario
+                return Usuario(row[0], row[1]) 
             else:
                 return None
         except Exception as ex:
-            raise RuntimeError(ex)
-
-
+            # Es mejor manejar o loggear el error
+            print(f"Error en ModeloUsuario.get_by_id: {ex}")
+            return None
